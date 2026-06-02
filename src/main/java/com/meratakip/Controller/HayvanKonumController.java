@@ -34,4 +34,8 @@ public class HayvanKonumController {
     public List<HayvanKonum> tumKonumlar() {
         return repository.findAll();
     }
+    @GetMapping("/son")
+public List<HayvanKonum> sonKonumlar() {
+    return repository.findTop5ByOrderByZamanDesc();
+}
 }
